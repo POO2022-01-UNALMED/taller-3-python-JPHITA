@@ -12,7 +12,7 @@ class TV:
       self._volumen: int = 1
       self._control: Control = None
 
-      _numTV += 1
+      self._numTV += 1
 
   def getMarca(self):
     return self._marca
