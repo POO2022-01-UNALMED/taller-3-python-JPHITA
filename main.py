@@ -26,3 +26,24 @@ if __name__ == "__main__":
     print(tv1.getPrecio())
     print(tv1.getMarca().getNombre())
     print(tv1.getCanal())
+
+
+    marca = Marca("Semsung")
+    tv1 = TV(marca, True)
+
+    tv1.setCanal(100)
+    tv1.canalDown()
+
+    tv2 = TV(marca, False)
+    control = Control()
+    control.enlazar(tv2)
+    control.setCanal(50)
+    control.turnOn()
+    control.canalUp()
+
+    tv3 = TV(marca, False)
+    tv2.setCanal(121)
+
+    ok = False
+
+    # if(tv1.getCanal() == 99 and tv2.getCanal() == 2 and tv3.getCanal() == 1):

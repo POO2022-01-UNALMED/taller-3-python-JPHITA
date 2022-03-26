@@ -36,13 +36,15 @@ class TV:
     return self._volumen
 
   def setVolumen(self, volumen):
-    self._volumen = volumen
+    if self._estado == True and (self._volumen + vol) in range(0, 7 + 1):
+      self._volumen = volumen
 
   def getCanal(self):
     return self._canal
   
   def setCanal(self, canal):
-    self._canal = canal
+    if self._estado == True and (self._canal + canal) in range(1,120 + 1):
+      self._canal = canal
 
   @classmethod
   def getNumTV(cls):
@@ -62,19 +64,19 @@ class TV:
     return self._estado
 
   def canalUp(self, canal = 1):
-    if self._estado == True and (self._canal + canal) in (1,120):
+    if self._estado == True and (self._canal + canal) in range(1, 120 + 1):
       self._canal += canal
   
   def canalDown(self, canal = 1):
-    if self._estado == True and (self._canal + canal) in (1, 120):
+    if self._estado == True and (self._canal - canal) in range(1, 120 + 1):
       self._canal -= canal
 
   def volumenUp(self, vol = 1):
-    if self._estado == True and (self._volumen + vol) in (0, 7):
+    if self._estado == True and (self._volumen + vol) in range(0, 7 + 1):
       self._volumen += vol
 
   def volumenDown(self, vol = 1):
-    if self._estado == True and (self._volumen + vol) in (0, 7):
+    if self._estado == True and (self._volumen - vol) in range(0, 7 + 1):
       self._volumen -= vol
 
   

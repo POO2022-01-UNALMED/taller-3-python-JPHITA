@@ -10,23 +10,19 @@ class Control:
     self._tv.turnOff()
 
   def canalUp(self, canal = 1):
-    if self._tv.getEstado() == True and (self._tv.getCanal() + canal) in (1,120):
-      self._tv.canalUp(canal)
+    self._tv.canalUp(canal)
   
   def canalDown(self, canal = 1):
-    if self._tv.getEstado() == True and (self._tv.getCanal() + canal) in (1, 120):
-      self._tv.canalDown(canal)
+    self._tv.canalDown(canal)
 
   def setCanal(self, canal):
     self._tv.setCanal(canal)
 
   def volumenUp(self, vol = 1):
-    if self._tv.getEstado() == True and (self._tv.getVolumen() + vol) in (0, 7):
-      self._tv.volumenUp(vol)
+    self._tv.volumenUp(vol)
 
   def volumenDown(self, vol = 1):
-    if self._tv.getEstado() == True and (self._tv.getVolumen() + vol) in (0, 7):
-      self._tv.volumenDown(vol)
+    self._tv.volumenDown(vol)
 
   def enlazar(self, tv):
     self._tv = tv
